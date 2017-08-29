@@ -83,7 +83,7 @@ module.exports.toBuffer = function(args, callback) {
 
 	// Initialize a barcode writer object.  This is the interface between
 	// the low-level BWIPP code, freetype, and the Bitmap object.
-	var bw = new bwipjs(freetype, mono);
+	var bw = new bwipjs(null, mono);
 
 	// Set the options
 	var opts = {};
