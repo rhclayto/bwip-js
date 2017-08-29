@@ -7,7 +7,7 @@ var floor = Math.floor;
 var round = Math.round;
 var ceil  = Math.ceil;
 
-function BWIPJS(null, monochrome) {
+function BWIPJS(freetype, monochrome) {
 	if (this.constructor !== BWIPJS) {
 		return new BWIPJS(null, monochrome);
 	}
