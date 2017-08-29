@@ -7,16 +7,16 @@ var floor = Math.floor;
 var round = Math.round;
 var ceil  = Math.ceil;
 
-function BWIPJS(freetype, monochrome) {
+function BWIPJS(null, monochrome) {
 	if (this.constructor !== BWIPJS) {
-		return new BWIPJS(freetype, monochrome);
+		return new BWIPJS(null, monochrome);
 	}
 	this.bmap = null;	// bitmap interface
 	this.gstk = [];		// graphics save/restore stack
 	this.reset();
 
 	// FreeType interface
-	this.ft = {
+	/* this.ft = {
 		monochrome:freetype.cwrap("monochrome", 'number', ['number']),
 		lookup:freetype.cwrap("find_font", 'number', ['string']),
 		bitmap:freetype.cwrap("get_bitmap", 'number',
@@ -27,9 +27,10 @@ function BWIPJS(freetype, monochrome) {
 		top:freetype.cwrap("get_top", 'number', []),
 		advance:freetype.cwrap("get_advance", 'number', []),
 		module:freetype,
-	};
+	}; */
+	this.ft = {};
 
-	this.ft.monochrome(monochrome ? 1 : 0);
+	// this.ft.monochrome(monochrome ? 1 : 0);
 }
 
 BWIPJS.prototype.bitmap = function(bitmap) {
